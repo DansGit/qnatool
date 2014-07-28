@@ -40,17 +40,17 @@ Download Stanford CoreNLP here and extract to the root of your qnatool directory
 Download: http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 
 People on Unix-like operating systems can simply type in:
-'''
+```
 cd /path/to/qnatool
 wget http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 unzip stanford-corenlp-full-2013-11-12.zip
-'''
+```
 
 ## Other requirements
 Lastly, navigate to the qnatool directory and execute:
-'''
+```
 pip install -r requirements.txt
-'''
+```
 
 Now you should be ready to run qnatool!
 
@@ -61,15 +61,15 @@ qnatool requires 3 things to run:
 3. A directory where the results will be saved to.
 Imagine you have a directory full of .txt or .json (see json section) files that you want to turn into a single network.
 Simply open a terminal, navigate to your qnatool directory and type in the following:
-'''
+```
 python qnatool project_name /directory/with/your/source/files /your/output/directory
-'''
+```
 This will create a new folder called 'project_name' in /your/output/directory.
 
 # .json files
 You can optionally choose to provide your source data as .json files, which gives qnatool a little more data to work with.
 The json files are dictionary like objects that look like this:
-'''
+```
 {
     "content": "The news article content goes here.",
     "title": "Article Title",
@@ -77,7 +77,7 @@ The json files are dictionary like objects that look like this:
     "publication": "The articles publisher",
     "author": "The article's author"
 }
-'''
+```
 Currently, only pub_date is used in the program, but the other attributes are stored in your project's database for easy
 access later on.
 A note on publication dates: qnatool uses the parsedatetime module by Mike Taylor and Darshana Chhajed. This means
