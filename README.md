@@ -26,9 +26,9 @@ To download it, go here: https://www.python.org/downloads/
 ## igraph
 Go to http://igraph.org/python/ and install igraph to your computer.
 Alternatively, if you use Ubuntu Linux, simply open your terminal and type in:
-'''
+```
 sudo apt-get install python-igraph
-'''
+```
 Or use whatever packagement method works for your distribution.
 
 ## Cairo Library
