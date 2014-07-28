@@ -35,7 +35,7 @@ Or use whatever packagement method works for your distribution.
 Go to http://www.cairographics.org/download/ and follow their instructions.
 
 ## Stanford CoreNLP
-Download Stanford CoreNLP and extract to the root of your qnatool directory.
+Download Stanford CoreNLP and extract it to the root of your qnatool directory.
 
 Download: http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 
