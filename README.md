@@ -42,7 +42,7 @@ Download: http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 
 Note: It must be this specific version of CoreNLP. Don't try to use a newer version.
 
-Linux and OSX users can simply type in:
+Linux users can simply type in:
 ```
 cd /path/to/qnatool
 wget http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
