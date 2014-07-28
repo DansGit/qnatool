@@ -42,7 +42,7 @@ Download: http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 
 Note: It must be this specific version of CoreNLP. Don't try to use a newer version.
 
-Linux users can simply type in:
+Linux users can simply open a terminal and type in:
 ```
 cd /path/to/qnatool
 wget http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
@@ -62,12 +62,12 @@ qnatool requires 3 things to run:
 
 1. A project name.
 
-2. A directory full of files to process
+2. A directory filled files to process
 
 3. A directory where the results will be saved to.
 
-Imagine you have a directory full of .txt or .json (see json section) files that you want to turn into a single network.
-Simply open a terminal, navigate to your qnatool directory and type in the following:
+Imagine you have a directory with .txt or .json (see json section) files that you want to turn into a single network.
+Simply open a terminal, navigate to your qnatool directory and type in something like the following:
 ```
 python qnatool project_name /directory/with/your/source/files /your/output/directory
 ```
