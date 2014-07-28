@@ -1,3 +1,4 @@
+![A network graph](https://raw.githubusercontent.com/DansGit/qnatool/master/docs/abortion2.png)
 # qnatool
 This is a program for turning words (sentences, paragraphs, etc) into networks.
 qnatool was inspired by the work of Roberto Franzosi (*From Words to Numbers: Narrative, Data, and Social Science*)
