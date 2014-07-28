@@ -2,7 +2,7 @@
 # qnatool
 This is a program for turning words (sentences, paragraphs, etc) into networks.
 qnatool was inspired by the work of Roberto Franzosi (*From Words to Numbers: Narrative, Data, and Social Science*)
-and Saatviga Sudhahar (*Automating Quantitative Narrative Analysis of News Data*) and tries its best to follow their
+and Saatviga Sudhahar (*Automating Quantitative Narrative Analysis of News Data*) and does best to follow their
 examples for doing quantitative narrative analysis. 
 
 I should add that this program represents my first steps into
@@ -12,7 +12,7 @@ Lastly, I'm very interested in both methodological feedback
 (can we learn anything using this?) and critques of my code (of which I'm sure there are many). 
 
 # Features
-* Sporadic documentation and messy code! (see to do section)
+* Sporadic documentation and messy code! (see todo)
 * Support for .txt files and .json files (see usage)
 * Generates a database of narrative (SVO) triplets.
 * Produces gexf files that can be viewed in Gephi.
