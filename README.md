@@ -59,9 +59,13 @@ Now you should be ready to run qnatool!
 
 # Usage
 qnatool requires 3 things to run:
+
 1. A project name.
+
 2. A directory full of files to process
+
 3. A directory where the results will be saved to.
+
 Imagine you have a directory full of .txt or .json (see json section) files that you want to turn into a single network.
 Simply open a terminal, navigate to your qnatool directory and type in the following:
 ```
