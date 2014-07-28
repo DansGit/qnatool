@@ -87,7 +87,9 @@ The json files are dictionary like objects that look like this:
 ```
 Currently, only pub_date is used in the program, but the other attributes are stored in your project's database for easy
 access later on.
-A note on publication dates: qnatool uses the parsedatetime module by Mike Taylor and Darshana Chhajed. This means
+
+####A note on publication dates 
+qnatool uses the parsedatetime module by Mike Taylor and Darshana Chhajed. This means
 you can write the publication date in variety of formats (ex April, 1, 2014, 4/1/14, etc) and it will be understood
 by qnatool. More info here: https://code.google.com/p/parsedatetime/
 
