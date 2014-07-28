@@ -14,7 +14,7 @@ Lastly, I'm very interested in both methodological feedback
 # Features
 * Sporadic documentation and messy code! (see todo)
 * Support for .txt files and .json files (see usage)
-* Generates a database of narrative (SVO) triplets.
+* Generates a database of SVO triplets.
 * Produces gexf files that can be viewed in Gephi.
 * Produces a variety of charts and spreadsheets to describe network properties.
 
@@ -35,11 +35,11 @@ Or use whatever packagement method works for your distribution.
 Go to http://www.cairographics.org/download/ and follow their instructions.
 
 ## Stanford CoreNLP
-Download Stanford CoreNLP here and extract to the root of your qnatool directory.
+Download Stanford CoreNLP and extract to the root of your qnatool directory.
 
 Download: http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 
-People on Unix-like operating systems can simply type in:
+Linux and OSX users can simply type in:
 ```
 cd /path/to/qnatool
 wget http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
