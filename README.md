@@ -19,6 +19,7 @@ Lastly, I'm very interested in both methodological feedback
 * Produces a variety of charts and spreadsheets to describe network properties.
 
 # Setting Up
+Make sure you have all the requirements installed before trying to use qnatool.
 ## Python 2.7
 Make sure you have Python 2.7 installed.
 To download it, go here: https://www.python.org/downloads/ 
