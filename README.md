@@ -33,7 +33,8 @@ sudo apt-get install python-igraph
 Or use whatever packagement method works for your distribution.
 
 ## Cairo Library
-You need both Cairo Library and Py2cairo installed
+You need both Cairo Library and Py2cairo installed if you want qnatool to make images of the graph.
+If not, you can skip this step.
 * **CairoLib:** Go to http://www.cairographics.org/download/ and follow their instructions.
 * **Py2cairo:** Got to http://cairographics.org/pycairo/ and follow their instructions.
 
@@ -107,4 +108,7 @@ by qnatool. More info here: https://code.google.com/p/parsedatetime/
 - [ ] Add support for more metrics.
 - [ ] Investigate using threads to speed up triplet extraction phase.
 - [ ] Write a section about the results of the program in README.md
+- [ ] The charting functions are pretty ugly and I'm not sure if they're at all useful.
+I think I'll just remove them at some point and improve the spreadsheets that generated so users can
+make whatever charts they want.
 
