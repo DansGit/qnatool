@@ -19,7 +19,7 @@ do_network = True
 do_charts = True
 
 # How much memory to allow StanfordCoreNLP to use
-memory = "2g"
+memory = "3g"
 
 
 # Filtering Settings
