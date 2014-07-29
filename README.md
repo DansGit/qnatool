@@ -109,6 +109,6 @@ by qnatool. More info here: https://code.google.com/p/parsedatetime/
 - [ ] Investigate using threads to speed up triplet extraction phase.
 - [ ] Write a section about the results of the program in README.md
 - [ ] The charting functions are pretty ugly and I'm not sure if they're at all useful.
-I think I'll just remove them at some point and improve the spreadsheets that generated so users can
+I think I'll just remove them at some point and improve the spreadsheets that are generated so users can
 make whatever charts they want.
 
