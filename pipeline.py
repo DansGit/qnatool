@@ -63,8 +63,12 @@ def init():
     # Make database
     process.database.init_db()
 
+    # Make temp dir if it doesn't exist
+    if not os.path.exists(config.TEMP):
+        os.mkdir(config.TEMP)
+
     # clear temp
-    for root, dirs, fnames in os.walk('data/temp'):
+    for root, dirs, fnames in os.walk(config.TEMP):
         for fname in fnames:
             p = os.path.join(root, fname)
             os.remove(p)
@@ -72,3 +76,4 @@ def init():
     # clear log file
     f = open('data/corenlp_log.txt', 'w')
     f.close()
+
