@@ -31,7 +31,7 @@ def monitor_progress(num_files):
 
     fname = ''
     while True:
-        f.seek(0)
+        f.seek(0) # Refresh log.
         try:
             line = f.readlines()[-1]
         except IndexError:
