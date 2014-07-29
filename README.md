@@ -36,6 +36,7 @@ Or use whatever packagement method works for your distribution.
 You need both Cairo Library and Py2cairo installed
 * **CairoLib:** Go to http://www.cairographics.org/download/ and follow their instructions.
 * **Py2cairo:** Got to http://cairographics.org/pycairo/ and follow their instructions.
+
 Alternatively use whatever package management systems works for you.
 
 #### Mac OS X
