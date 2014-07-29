@@ -8,7 +8,7 @@ import os
 # includes parsing the text with StanfordCoreNLP,
 # extracting triplets and filtering out unreliable
 # triplets.
-do_process = False
+do_process = True
 
 # Whether or not to generate network files.
 # This is required for making charts.
@@ -17,6 +17,9 @@ do_network = True
 # Whether or not to generate charts that describe the
 # network's properties.
 do_charts = True
+
+# How much memory to allow StanfordCoreNLP to use
+memory = "2g"
 
 
 # Filtering Settings

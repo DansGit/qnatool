@@ -1,7 +1,7 @@
 *.pyc
 venv/
 stanford-corenlp-full-2013-11-12/
-
+*.zip
 *~
 *.swp
 *.swo

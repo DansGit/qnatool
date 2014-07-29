@@ -209,7 +209,7 @@ def parse_corefs(entities):
     entity_str = '. '.join(entities)
 
     # And send it StanfordCoreNLP to resolve corefs.
-    corenlp = StanfordCoreNLP()
+    corenlp = StanfordCoreNLP(memory=config.memory)
 
     return corenlp.raw_parse(entity_str)
 

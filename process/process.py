@@ -23,20 +23,23 @@ def monitor_progress(num_files):
     # Try three times to open the file
     for x in range(3):
         try:
-            f = open('data/corenlp_log.txt', 'r')
+            f = open(os.path.join(config.DATA, 'corenlp_log.txt'))
             break
         except IOError:
             sleep(4)
 
+
     fname = ''
     while True:
+        f.seek(0)
         try:
             line = f.readlines()[-1]
         except IndexError:
             sleep(1)
             continue
+        
 
-        if line and line.startswith('  Annotating file'):
+        if line and line.strip().startswith('Annotating file'):
             # Once we find the right line, start the pbar
             if not pbar.has_started():
                 print "Sending files to StanfordCoreNLP..."
@@ -52,8 +55,6 @@ def monitor_progress(num_files):
             # Stop the thread
             return
         sleep(.1)
-        f.seek(0)
-
 
 
 def preprocess_dir(directory):
@@ -88,6 +89,7 @@ def preprocess_dir(directory):
 
             article_dict['path'] = os.path.abspath(
                     os.path.join(root, f_name)).decode('utf-8')
+
             # remove unicode
             article_dict = dict((k, v.encode('ascii', 'ignore')) for (
                 k, v) in article_dict.items())
@@ -113,13 +115,13 @@ def batch_process(directory):
         file_dict = preprocess_dir(directory)
 
         # Parse files with progress bar
-        print "Starting corenlp. Wait a few moments."
         t = Thread(target=monitor_progress, kwargs={
             'num_files':len(file_dict)
             })
         t.daemon = True
         t.start()
-        parses = corenlp.batch_parse(config.TEMP)
+        print "Starting corenlp. Wait a few moments."
+        parses = corenlp.batch_parse(config.TEMP, memory=config.memory)
 
         # Extract triplets and save to db
         pbar = ProgressBar(len(file_dict))

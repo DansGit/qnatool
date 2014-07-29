@@ -4,3 +4,4 @@ argparse==1.2.1
 nltk==2.0.4
 pexpect==3.3
 wsgiref==0.1.2
+lxml==3.3.3
