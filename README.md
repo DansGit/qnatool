@@ -33,7 +33,15 @@ sudo apt-get install python-igraph
 Or use whatever packagement method works for your distribution.
 
 ## Cairo Library
-Go to http://www.cairographics.org/download/ and follow their instructions.
+You need both Cairo Library and Py2cairo installed
+* **CairoLib:** Go to http://www.cairographics.org/download/ and follow their instructions.
+* **Py2cairo:** Got to http://cairographics.org/pycairo/ and follow their instructions.
+Alternatively use whatever package management systems works for you.
+
+#### Mac OS X
+I've found it can be hard to install Py2cairo on OS X.
+These instructions seem to work pretty well: http://pydanny.com/installing-pycairo-on-mountain-lion.html
+
 
 ## Stanford CoreNLP
 Download Stanford CoreNLP and extract it to the root of your qnatool directory.
