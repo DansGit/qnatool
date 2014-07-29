@@ -22,10 +22,15 @@ def draw(G, layout, label='name', name=None):
 
     fname = '{}.png'.format(name)
     l = G.layout(layout)
-    ig.plot(G,
-            os.path.join(config.output_dir, fname),
-            layout=l,
-            **style)
+
+    try:
+        ig.plot(G,
+                os.path.join(config.output_dir, fname),
+                layout=l,
+                **style)
+    except TypeError:
+        # Plotting is not available
+        print "Error: Plotting is not available. You probably don't have cairolib or py2cairo installed."
 
 def _scale(seq):
     return [(x-min(seq))/(max(seq)-min(seq)) for x in seq]
