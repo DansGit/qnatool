@@ -20,7 +20,7 @@ def weight():
      ))
     pbar = ProgressBar(total)
 
-    print "(3/5) Weighting database..."
+    print "Weighting database..."
     pbar.start()
     for c in COLUMNS:
         fg_freqs = get_freqs(c, conn)
