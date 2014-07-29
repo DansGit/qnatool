@@ -2,7 +2,7 @@ import sqlite3
 import config
 from os import path
 from progressbar import ProgressBar
-from corenlp import StanfordCoreNLP
+import corenlp
 
 
 
@@ -178,12 +178,14 @@ def get_counts(conn):
 def resolve_corefs():
     print "Resolving corefs..."
     # Get entities from db
+    print 'one'
     conn = sqlite3.connect(config.DB)
     entities = get_entities(conn)
 
     # Resolve corefs using StanfordCoreNLP
-    parsed = parse_corefs(entities)
-    set_corefs(parsed, conn)
+    parses = parse_corefs(entities)
+    for parse in parses:
+        set_corefs(parse, conn)
 
     # Resolve corefs using Levenshtein edit distance
     matches = fuzzy_strmatch(get_entities(conn))
@@ -202,17 +204,28 @@ def get_entities(conn):
     return entities
 
 def parse_corefs(entities):
+    from tempfile import NamedTemporaryFile
+    import os
+
     # Sort the list by string length.
     entities.sort(key=len, reverse=True)
 
     # Put all entities in a txt file.
     entity_str = '. '.join(entities)
 
+    temp = NamedTemporaryFile(dir=config.TEMP, delete=False) 
+    temp.write(entity_str)
+
     # And send it StanfordCoreNLP to resolve corefs.
-    corenlp = StanfordCoreNLP(memory=config.memory)
+    parses = corenlp.batch_parse(config.TEMP, memory=config.memory)
 
-    return corenlp.raw_parse(entity_str)
+    # Clean out temp dir
+    for root, dirs, fnames in os.walk(config.TEMP):
+        for fname in fnames:
+            p = os.path.join(root, fname)
+            os.remove(p)
 
+    return parses
 
 def set_corefs(parse_dict, conn):
     try:
