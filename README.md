@@ -79,7 +79,7 @@ qnatool requires 3 things to run:
 Imagine you have a directory with .txt or .json (see json section) files that you want to turn into a single network.
 Simply open a terminal, navigate to your qnatool directory and type in something like the following:
 ```
-python qnatool project_name /directory/with/your/source/files /your/output/directory
+python qnatool.py project_name /directory/with/your/source/files /your/output/directory
 ```
 This will create a new folder called 'project_name' in /your/output/directory.
 
