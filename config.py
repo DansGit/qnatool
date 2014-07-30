@@ -7,7 +7,8 @@ import os
 # Whether or not to do the processing phase, which
 # includes parsing the text with StanfordCoreNLP,
 # extracting triplets and filtering out unreliable
-# triplets.
+# triplets. You can set this to false if you've already
+# run qnatool and want to remake the networks and charts.
 do_process = True
 
 # Whether or not to generate network files.
@@ -18,7 +19,7 @@ do_network = True
 # network's properties.
 do_charts = True
 
-# How much memory to allow StanfordCoreNLP to use
+# How much memory to allow StanfordCoreNLP to use.
 memory = "3g"
 
 
