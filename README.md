@@ -72,7 +72,7 @@ qnatool requires 3 things to run:
 
 1. A project name.
 
-2. A directory filled files to process
+2. A directory filled with files to process.
 
 3. A directory where the results will be saved to.
 
