@@ -6,7 +6,7 @@ and Saatviga Sudhahar (*Automating Quantitative Narrative Analysis of News Data*
 examples for doing quantitative narrative analysis. 
 
 I should add that this program represents my first steps into
-both the worlds of computer programming and text analysis, so you should proceed with caution 
+the world of text analysis, so you should proceed with caution 
 and skepticism if you decide to try this thing out.
 Lastly, I'm very interested in both methodological feedback
 (can we learn anything using this?) and critques of my code (of which I'm sure there are many). 
