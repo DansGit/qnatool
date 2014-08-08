@@ -22,7 +22,12 @@ def process_cmd():
         weight_threshold=config.weight_threshold,
         unnamed_threshold=config.unnamed_threshold
         )
+
+    # Reesolve corefs among entities in db.
     process.refine.resolve_corefs()
+
+    #  Make verbs.txt files in output dir.
+    process.verb_list.write()
 
 
 def classify_cmd():
