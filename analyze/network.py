@@ -320,7 +320,7 @@ def write_gexf(G, fpath):
             force_id='article_path')
     gexf_graph.addEdgeAttribute('sentiment', 0, force_id='sentiment')
     gexf_graph.addEdgeAttribute('sentences', 0,
-            type='string', 
+            type='string',
             force_id='sentences')
 
     gexf_graph.addNodeAttribute('community', 0, force_id='community')
@@ -469,7 +469,7 @@ def node_daterange(entity):
     query = """SELECT pub_date FROM triplets
     WHERE subject = ?
     OR obj = ?
-    ORDER BY pub_date ASC;""" #first result is most past
+    ORDER BY pub_date ASC;"""  # first result is most past
 
     params = (entity, entity)
     result = conn.execute(query, params).fetchall()
@@ -489,13 +489,13 @@ def edge_daterange(subject, obj):
     sub_start, sub_end = node_daterange(subject)
     obj_start, obj_end = node_daterange(obj)
 
-    #Greater than means more past. We want the slightly more recent one.
+    # Greater than means more past. We want the slightly more recent one.
     if sub_start > obj_start:
         start = obj_start
     else:
         start = sub_start
 
-    #Less than means more recent. We want the sligtly less recent one.
+    # Less than means more recent. We want the sligtly less recent one.
     if sub_end < obj_end:
         end = obj_end
     else:
@@ -504,3 +504,16 @@ def edge_daterange(subject, obj):
     return start, end
 
 
+def pickle_graph(G, fpath=None):
+    import os
+    """Writes the graph as a pickled
+    object."""
+
+    if not fpath:
+        fpath = os.path.join(config.output_dir,
+                             config.project_name +
+                             ".pickle"
+                             )
+
+    f = open(fpath, 'w')
+    return G.write_pickle(f)
