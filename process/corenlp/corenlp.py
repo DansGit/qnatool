@@ -369,7 +369,9 @@ def parse_xml_output(input_dir, corenlp_path=DIRECTORY, memory="3g", raw_output=
 
     # Open a file object to log corenlp's output,
     # which we'll use for time estimation. --Dan L
-    f = open('data/corenlp_log.txt', 'w')
+    import config
+    fpath = os.path.join(config.DATA, 'corenlp_log.txt')
+    f = open(fpath, 'w')
 
     call(command, stderr=f, shell=True)
 

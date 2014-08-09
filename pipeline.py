@@ -55,6 +55,9 @@ def process_cmd(args):
     #  Make verbs.txt files in output dir.
     process.verb_list.write()
 
+    # Set opened project
+    set_opened(config.output_dir)
+
 
 def classify_cmd(args):
     """Uses verbs.txt in output dir to set sentiment
@@ -63,9 +66,16 @@ def classify_cmd(args):
     """
 
     # Set parameters in config.py.
-    if utils.valid_dir(args.SRC):
+    if args.SRC is None:
+        project_path = get_opened()
+        config.source_dir = project_path
+        config.output_dir = project_path
+    elif utils.valid_dir(args.SRC):
         config.source_dir = args.SRC
         config.output_dir = args.SRC
+    else:
+        print "Project dir error. Exiting."
+        sys.exit(1)
 
     print "This does nothing...for now."
 
@@ -77,6 +87,10 @@ def network_cmd(args):
     """
 
     # Set parameters in config.py.
+    if args.SRC is None:
+        project_path = get_opened()
+        config.source_dir = project_path
+        config.output_dir = project_path
     if utils.valid_dir(args.SRC):
         config.source_dir = args.SRC
         config.output_dir = args.SRC
@@ -130,13 +144,51 @@ def network_cmd(args):
             print "Error: Community detection failed."
 
 
+def set_opened(path):
+    """Records the DEST path to a file so
+    the user doesn't have to type it in again."""
+    fpath = os.path.join(config.DATA, 'opened.txt')
+    f = open(fpath, 'w')
+    f.write(path)
+    f.close()
+
+
+def get_opened():
+    """Gets the last opned project."""
+    fpath = os.path.join(config.DATA, 'opened.txt')
+    f = open(fpath, 'w')
+    result = f.read()
+    f.close()
+    return result
+
+
 def init():
+    # Make program folder
+    home = os.path.expanduser('~')
+
+    # Set data dir path
+    progpath = os.path.join(home, '.qna')
+    if not os.path.exists(progpath):
+        os.mkdir(progpath)
+    config.DATA = progpath
+
+    # Set temp dir path
+    temp_path = os.path.join(progpath, 'temp')
+    if not os.path.exists(temp_path):
+        os.mkdir(temp_path)
+    config.TEMP = temp_path
+
+    # Set/move background db.
+    if config.BGDB is None:
+        bgdb_path = os.path.join(config.DATA, 'background.db')
+        if not os.path.exists(bgdb_path):
+            import shutil
+            shutil.copy('data/background.db', bgdb_path)
+        config.BGDB = bgdb_path
+
+
     # Make database
     process.database.init_db()
-
-    # Make temp dir if it doesn't exist
-    if not os.path.exists(config.TEMP):
-        os.mkdir(config.TEMP)
 
     # clear temp
     for root, dirs, fnames in os.walk(config.TEMP):
@@ -145,5 +197,6 @@ def init():
             os.remove(p)
 
     # clear log file
-    f = open('data/corenlp_log.txt', 'w')
+    logpath = os.path.join(config.DATA, 'corenlp_log.txt')
+    f = open(logpath, 'w')
     f.close()

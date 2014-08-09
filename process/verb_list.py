@@ -20,7 +20,7 @@ def write():
 
 
 def _get_verbs():
-    query = """SELECT predicate, sentiment FROM triplets
+    query = """SELECT DISTINCT predicate, sentiment FROM triplets
                 WHERE is_reliable = 1"""
 
     conn = sqlite3.connect(config.DB)

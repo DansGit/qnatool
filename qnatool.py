@@ -47,6 +47,9 @@ def QNATool(cmd, project_name, source_dir, output_dir):
     # Run the pipeline
     pipeline.run()
 
+
+    
+
 if __name__ == '__main__':
     # Create top level parser and subparsers
     parser = argparse.ArgumentParser(prog="qna")
