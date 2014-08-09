@@ -1,1 +1,34 @@
+Adding annotator tokenize
+Adding annotator ssplit
+Adding annotator pos
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [1.4 sec].
+Adding annotator lemma
+Adding annotator ner
+Loading classifier from edu/stanford/nlp/models/ner/english.all.3class.distsim.crf.ser.gz ... done [3.7 sec].
+Loading classifier from edu/stanford/nlp/models/ner/english.muc.7class.distsim.crf.ser.gz ... done [2.8 sec].
+Loading classifier from edu/stanford/nlp/models/ner/english.conll.4class.distsim.crf.ser.gz ... done [2.3 sec].
+Initializing JollyDayHoliday for sutime
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/defs.sutime.txt
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/english.sutime.txt
+Ignoring inactive rule: temporal-composite-8:ranges
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/english.holidays.sutime.txt
+Adding annotator parse
+Loading parser from serialized file edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz ... done [0.8 sec].
+Adding annotator dcoref
+Adding annotator sentiment
 
+Ready to process: 0 files, skipped 0, total 0
+Processed 0 documents
+Skipped 0 documents, error annotating 0 documents
+Annotation pipeline timing information:
+PTBTokenizerAnnotator: 0.0 sec.
+WordsToSentencesAnnotator: 0.0 sec.
+POSTaggerAnnotator: 0.0 sec.
+MorphaAnnotator: 0.0 sec.
+NERCombinerAnnotator: 0.0 sec.
+ParserAnnotator: 0.0 sec.
+DeterministicCorefAnnotator: 0.0 sec.
+SentimentAnnotator: 0.0 sec.
+TOTAL: 0.0 sec. for 0 tokens at NaN tokens/sec.
+Pipeline setup: 26.6 sec.
+Total time for StanfordCoreNLP pipeline: 26.6 sec.

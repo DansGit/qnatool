@@ -10,7 +10,7 @@ def write():
     if she chooses to.
     """
 
-    f = open(os.join(config.output_dir, 'verbs.txt'),
+    f = open(os.path.join(config.output_dir, 'verbs.txt'),
              mode='w')
     result = _get_verbs()
     for verb, sentiment in result:

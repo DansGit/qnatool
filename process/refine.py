@@ -178,7 +178,6 @@ def get_counts(conn):
 def resolve_corefs():
     print "Resolving corefs..."
     # Get entities from db
-    print 'one'
     conn = sqlite3.connect(config.DB)
     entities = get_entities(conn)
 

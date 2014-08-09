@@ -1,14 +1,40 @@
 import os
+import sys
+import utils
 import process
 import analyze
 import config
 
 
-def process_cmd():
+def process_cmd(args):
     """Processes text files and generates
     a database of SVO triplets in output dir.
     """
+    # Set parameters in config.py.
+    config.name = args.NAME
+    if args.SRC and utils.valid_dir(args.SRC):
+        config.source_dir = os.path.abspath(args.SRC)
+    else:
+        print "Source dir error. Exiting."
+        sys.exit(1)
+
+    if args.DEST and utils.valid_dir(args.DEST):
+        config.output_dir = os.path.join(os.path.abspath(args.DEST),
+                                         config.name)
+    else:
+        print "Destination dir error. Exiting."
+        sys.exit(1)
+
+    # Make the destination dir if it doesn't exist
+    if not os.path.exists(config.output_dir):
+        os.mkdir(config.output_dir)
+
+    # Set database location.
+    if config.DB == '':
+        config.DB = os.path.join(config.output_dir, '{}.db'.format(config.name))
+
     init()
+
     # Parses with corenlp and extracts triplets.
     process.process.batch_process(config.source_dir)
 
@@ -30,19 +56,30 @@ def process_cmd():
     process.verb_list.write()
 
 
-def classify_cmd():
+def classify_cmd(args):
     """Uses verbs.txt in output dir to set sentiment
     values for triplets. Allows for manual sentiment
     coding if desired.
     """
+
+    # Set parameters in config.py.
+    if utils.valid_dir(args.SRC):
+        config.source_dir = args.SRC
+        config.output_dir = args.SRC
+
     print "This does nothing...for now."
 
 
-def network_cmd(gexf, png, pickle, communities):
+def network_cmd(args):
     """Uses database in output dir to make network graph
     files in output dir. Graph files can take the form of
     a png image, a pickled igraph object, or a gexf file.
     """
+
+    # Set parameters in config.py.
+    if utils.valid_dir(args.SRC):
+        config.source_dir = args.SRC
+        config.output_dir = args.SRC
 
     print 'Generating network graph...'
     G = analyze.network.make_graph(giant=config.giant)
@@ -50,33 +87,33 @@ def network_cmd(gexf, png, pickle, communities):
     print "Finding communities."
     analyze.network.community_modularity(G)
 
-    if gexf:
+    if args.gexf or args.all:
         print "Exporting to gexf..."
         fname = "{}.gexf".format(config.project_name)
         analyze.network.write_gexf(G, os.path.join(config.output_dir, fname))
 
-    if png:
+    if args.png or args.all:
         print "drawing network to png..."
         analyze.draw_network.draw(G, 'fr',
                                   label='name',
                                   name=config.project_name
                                   )
 
-    if pickle:
+    if args.pickle or args.all:
         print "Pickling network..."
         analyze.network.pickle_graph(G)
 
-    if communities:
+    if args.communities:
         H = analyze.network.community_graph(G)
 
         if H:
-            if gexf:
+            if args.gexf or args.all:
                 print "Exporting community network to gexf..."
-                fname = "{}_communities.gexf".format(config.Project_name)
+                fname = "{}_communities.gexf".format(config.project_name)
                 fpath = os.path.join(config.output_dir, fname)
                 analyze.network.write_gexf(H, fpath)
 
-            if png:
+            if args.png or args.all:
                 print "Drawing community network as png file..."
                 analyze.draw_network.draw(H,
                                           'fr',
@@ -85,7 +122,7 @@ def network_cmd(gexf, png, pickle, communities):
                                           '_communities'
                                           )
 
-            if pickle:
+            if args.pickle or args.all:
                 print "pickling network graph..."
                 analyze.network.pickle_graph(G)
 
