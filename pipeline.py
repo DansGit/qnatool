@@ -62,6 +62,7 @@ def classify_cmd(args):
     values for triplets. Allows for manual sentiment
     coding if desired.
     """
+    from classify import classify
 
     # Set parameters in config.py.
     if args.SRC is None:
@@ -77,7 +78,11 @@ def classify_cmd(args):
         sys.exit(1)
 
     init()
-    print "This does nothing...for now."
+
+    verbs = os.path.join(config.source_dir, 'verbs.txt')
+    classify(verbs)
+
+
 
 
 def network_cmd(args):

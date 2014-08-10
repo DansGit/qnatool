@@ -67,7 +67,8 @@ if __name__ == '__main__':
     # 'classify' command
     classify_parser = subparsers.add_parser('classify')
     classify_parser.set_defaults(func=pipeline.classify_cmd)
-    classify_parser.add_argument('SRC', default=None, help='Directory ' +
+    classify_parser.add_argument('SRC', nargs='?', default=None,
+                                 help='Directory ' +
                                  'containing the output of the "process" ' +
                                  'command. Defaults to last opened project.')
     classify_parser.add_argument('-f', '--f', help="Path to a verbs.txt file " +
