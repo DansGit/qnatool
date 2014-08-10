@@ -70,13 +70,15 @@ if __name__ == '__main__':
     classify_parser.add_argument('SRC', default=None, help='Directory ' +
                                  'containing the output of the "process" ' +
                                  'command. Defaults to last opened project.')
-    classify_parser.add_argument('-f', help="Path to a verbs.txt file if you " +
-                                 "don't want to use the one in the SRC dir.")
+    classify_parser.add_argument('-f', '--f', help="Path to a verbs.txt file " +
+                                 "if you don't want to use the one in the SRC" +
+                                 " dir.")
 
     # 'network' command
     network_parser = subparsers.add_parser('network')
     network_parser.set_defaults(func=pipeline.network_cmd)
-    network_parser.add_argument('SRC', default=None, help='Directory containing ' +
+    network_parser.add_argument('SRC', nargs='?', default=None,
+                                help='Directory containing ' +
                                 'the output the "process" command. ' +
                                 'Defaults to last opened project.')
     network_parser.add_argument('-a', '--all', action='store_true',

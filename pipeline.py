@@ -1,3 +1,4 @@
+# TODO better init function.
 import os
 import sys
 import utils
@@ -11,7 +12,7 @@ def process_cmd(args):
     a database of SVO triplets in output dir.
     """
     # Set parameters in config.py.
-    config.name = args.NAME
+    config.project_name = args.NAME
     if args.SRC and utils.valid_dir(args.SRC):
         config.source_dir = os.path.abspath(args.SRC)
     else:
@@ -20,7 +21,7 @@ def process_cmd(args):
 
     if args.DEST and utils.valid_dir(args.DEST):
         config.output_dir = os.path.join(os.path.abspath(args.DEST),
-                                         config.name)
+                                         config.project_name)
     else:
         print "Destination dir error. Exiting."
         sys.exit(1)
@@ -29,9 +30,6 @@ def process_cmd(args):
     if not os.path.exists(config.output_dir):
         os.mkdir(config.output_dir)
 
-    # Set database location.
-    if config.DB == '':
-        config.DB = os.path.join(config.output_dir, '{}.db'.format(config.name))
 
     init()
 
@@ -56,7 +54,7 @@ def process_cmd(args):
     process.verb_list.write()
 
     # Set opened project
-    set_opened(config.output_dir)
+    set_opened(config.project_name, config.output_dir)
 
 
 def classify_cmd(args):
@@ -67,7 +65,8 @@ def classify_cmd(args):
 
     # Set parameters in config.py.
     if args.SRC is None:
-        project_path = get_opened()
+        name, project_path = get_opened()
+        config.project_name = name
         config.source_dir = project_path
         config.output_dir = project_path
     elif utils.valid_dir(args.SRC):
@@ -77,6 +76,7 @@ def classify_cmd(args):
         print "Project dir error. Exiting."
         sys.exit(1)
 
+    init()
     print "This does nothing...for now."
 
 
@@ -88,12 +88,18 @@ def network_cmd(args):
 
     # Set parameters in config.py.
     if args.SRC is None:
-        project_path = get_opened()
+        name, project_path = get_opened()
+        config.project_name = name
         config.source_dir = project_path
         config.output_dir = project_path
-    if utils.valid_dir(args.SRC):
+    elif utils.valid_dir(args.SRC):
         config.source_dir = args.SRC
         config.output_dir = args.SRC
+    else:
+        print "Project dir error. Exiting."
+        sys.exit(1)
+
+    init()
 
     print 'Generating network graph...'
     G = analyze.network.make_graph(giant=config.giant)
@@ -144,26 +150,32 @@ def network_cmd(args):
             print "Error: Community detection failed."
 
 
-def set_opened(path):
+def set_opened(name, path):
     """Records the DEST path to a file so
     the user doesn't have to type it in again."""
     fpath = os.path.join(config.DATA, 'opened.txt')
     f = open(fpath, 'w')
-    f.write(path)
+    f.write('{}\n{}'.format(name, path))
     f.close()
 
 
 def get_opened():
     """Gets the last opned project."""
-    fpath = os.path.join(config.DATA, 'opened.txt')
-    f = open(fpath, 'w')
-    result = f.read()
-    f.close()
-    return result
+    data_dir = os.path.join(os.path.expanduser('~'), '.qna')
+    fpath = os.path.join(data_dir, 'opened.txt')
+    if os.path.exists(fpath):
+        f = open(fpath, 'r')
+        name = f.readline().strip()
+        path = f.readline().strip()
+        f.close()
+        return name, path
+    else:
+        print("Error unable to get most recently opened project. " +
+              "Please set manually.")
+        sys.exit(1)
 
 
 def init():
-    # Make program folder
     home = os.path.expanduser('~')
 
     # Set data dir path
@@ -186,6 +198,9 @@ def init():
             shutil.copy('data/background.db', bgdb_path)
         config.BGDB = bgdb_path
 
+    # Set database location.
+    if config.DB == '':
+        config.DB = os.path.join(config.output_dir, '{}.db'.format(config.project_name))
 
     # Make database
     process.database.init_db()
