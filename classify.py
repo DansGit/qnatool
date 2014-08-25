@@ -10,8 +10,7 @@ def classify(path):
 
     for line in verbs:
         verb, sentiment = line.split(' = ')
-        params = {'verb': verb, 'sentiment': sentiment}
-        print '{}, {}'.format(verb, sentiment)
+        params = {'verb': verb.strip(), 'sentiment': sentiment.strip()}
         conn.execute(query, params)
     conn.commit()
     conn.close()
