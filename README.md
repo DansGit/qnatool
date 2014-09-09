@@ -9,7 +9,7 @@ I should add that this program represents my first steps into
 the world of text analysis, so you should proceed with caution 
 and skepticism if you decide to try this thing out.
 Lastly, I'm very interested in both methodological feedback
-(can we learn anything using this?) and critques of my code (of which I'm sure there are many). 
+(can we learn anything using this?) and critques of my very unprofessional code. 
 
 # Features
 * Sporadic documentation and messy code! (see todo)
@@ -27,7 +27,7 @@ To download it, go here: https://www.python.org/downloads/
 ## igraph
 Go to http://igraph.org/python/ and install igraph to your computer.
 Alternatively, if you use Ubuntu Linux, simply open your terminal and type in:
-```
+```bash
 sudo apt-get install python-igraph
 ```
 Or use whatever packagement method works for your distribution.
@@ -53,7 +53,7 @@ Download: http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 Note: It must be this specific version of CoreNLP. Don't try to use a newer version.
 
 Linux users can simply open a terminal and type in:
-```
+```bash
 cd /path/to/qnatool
 wget http://nlp.stanford.edu/software/stanford-corenlp-full-2013-11-12.zip
 unzip stanford-corenlp-full-2013-11-12.zip
@@ -61,7 +61,7 @@ unzip stanford-corenlp-full-2013-11-12.zip
 
 ## Other requirements
 Lastly, navigate to the qnatool directory and execute:
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -78,7 +78,7 @@ qnatool requires 3 things to run:
 
 Imagine you have a directory with .txt or .json (see json section) files that you want to turn into a single network.
 Simply open a terminal, navigate to your qnatool directory and type in something like the following:
-```
+```bash
 python qnatool.py project_name /directory/with/your/source/files /your/output/directory
 ```
 This will create a new folder called 'project_name' in /your/output/directory.
@@ -86,7 +86,7 @@ This will create a new folder called 'project_name' in /your/output/directory.
 # .json files
 You can optionally choose to provide your source data as .json files, which gives qnatool a little more data to work with.
 The json files are dictionary like objects that look like this:
-```
+```python
 {
     "content": "The news article content goes here.",
     "title": "Article Title",
