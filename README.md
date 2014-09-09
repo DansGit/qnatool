@@ -16,7 +16,6 @@ Lastly, I'm very interested in both methodological feedback
 * Support for .txt files and .json files (see usage)
 * Generates a database of SVO triplets.
 * Produces gexf files that can be viewed in Gephi.
-* Produces a variety of charts and spreadsheets to describe network properties.
 
 # Setting Up
 Make sure you have all the requirements installed before trying to use qnatool.
