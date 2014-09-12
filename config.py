@@ -71,8 +71,8 @@ project_name = ''
 
 # Path to the data and temp folders.
 # I reccomend you don't change these.
-DATA = os.path.abspath('data')
-TEMP = os.path.join(DATA, 'temp')
+DATA = None
+TEMP = None
 
 # You may want to have multiple QNATool processes write to a single
 # database. In that case, simply provide that database's path
@@ -85,4 +85,4 @@ DB = ''
 # For that reason, this database should be generated from
 # a set of articles that aren't relevant to your
 # work.
-BGDB = os.path.join(DATA, 'background.db')
+BGDB = None

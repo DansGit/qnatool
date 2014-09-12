@@ -27,6 +27,7 @@ def monitor_progress(num_files):
             break
         except IOError:
             sleep(4)
+        print "ERROR: Unable to find corenlp_log.txt"
 
 
     fname = ''

@@ -1,1 +1,187 @@
+Adding annotator tokenize
+Adding annotator ssplit
+Adding annotator pos
+Reading POS tagger model from edu/stanford/nlp/models/pos-tagger/english-left3words/english-left3words-distsim.tagger ... done [1.3 sec].
+Adding annotator lemma
+Adding annotator ner
+Loading classifier from edu/stanford/nlp/models/ner/english.all.3class.distsim.crf.ser.gz ... done [3.7 sec].
+Loading classifier from edu/stanford/nlp/models/ner/english.muc.7class.distsim.crf.ser.gz ... done [2.9 sec].
+Loading classifier from edu/stanford/nlp/models/ner/english.conll.4class.distsim.crf.ser.gz ... done [2.2 sec].
+Initializing JollyDayHoliday for sutime
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/defs.sutime.txt
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/english.sutime.txt
+Ignoring inactive rule: temporal-composite-8:ranges
+Reading TokensRegex rules from edu/stanford/nlp/models/sutime/english.holidays.sutime.txt
+Adding annotator parse
+Loading parser from serialized file edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz ... done [0.8 sec].
+Adding annotator dcoref
+Adding annotator sentiment
 
+Ready to process: 1627 files, skipped 0, total 1627
+Processing file /home/dan/.qna/temp/tmps5RwwW ... writing to /tmp/tmpZ9ZMcd/tmps5RwwW.xml {
+  Annotating file /home/dan/.qna/temp/tmps5RwwW [11.852 seconds]
+} [12.8 seconds]
+Processing file /home/dan/.qna/temp/tmp8998jC ... writing to /tmp/tmpZ9ZMcd/tmp8998jC.xml {
+  Annotating file /home/dan/.qna/temp/tmp8998jC [8.201 seconds]
+} [8.437 seconds]
+Processing file /home/dan/.qna/temp/tmpgcFFjI ... writing to /tmp/tmpZ9ZMcd/tmpgcFFjI.xml {
+  Annotating file /home/dan/.qna/temp/tmpgcFFjI [5.30 seconds]
+} [5.62 seconds]
+Processing file /home/dan/.qna/temp/tmpTC5SJ7 ... writing to /tmp/tmpZ9ZMcd/tmpTC5SJ7.xml {
+  Annotating file /home/dan/.qna/temp/tmpTC5SJ7 [6.45 seconds]
+} [6.65 seconds]
+Processing file /home/dan/.qna/temp/tmpzqIjnX ... writing to /tmp/tmpZ9ZMcd/tmpzqIjnX.xml {
+  Annotating file /home/dan/.qna/temp/tmpzqIjnX [2.292 seconds]
+} [2.303 seconds]
+Processing file /home/dan/.qna/temp/tmpvQqVNL ... writing to /tmp/tmpZ9ZMcd/tmpvQqVNL.xml {
+  Annotating file /home/dan/.qna/temp/tmpvQqVNL [1.328 seconds]
+} [1.336 seconds]
+Processing file /home/dan/.qna/temp/tmphSS6Mi ... writing to /tmp/tmpZ9ZMcd/tmphSS6Mi.xml {
+  Annotating file /home/dan/.qna/temp/tmphSS6Mi [2.946 seconds]
+} [2.959 seconds]
+Processing file /home/dan/.qna/temp/tmpbs3zIB ... writing to /tmp/tmpZ9ZMcd/tmpbs3zIB.xml {
+  Annotating file /home/dan/.qna/temp/tmpbs3zIB [1.756 seconds]
+} [1.764 seconds]
+Processing file /home/dan/.qna/temp/tmpcM73G6 ... writing to /tmp/tmpZ9ZMcd/tmpcM73G6.xml {
+  Annotating file /home/dan/.qna/temp/tmpcM73G6 [1.909 seconds]
+} [1.916 seconds]
+Processing file /home/dan/.qna/temp/tmpVflSha ... writing to /tmp/tmpZ9ZMcd/tmpVflSha.xml {
+  Annotating file /home/dan/.qna/temp/tmpVflSha [4.599 seconds]
+} [4.613 seconds]
+Processing file /home/dan/.qna/temp/tmp3S_Q1V ... writing to /tmp/tmpZ9ZMcd/tmp3S_Q1V.xml {
+  Annotating file /home/dan/.qna/temp/tmp3S_Q1V [1.902 seconds]
+} [1.907 seconds]
+Processing file /home/dan/.qna/temp/tmpcDp5e8 ... writing to /tmp/tmpZ9ZMcd/tmpcDp5e8.xml {
+  Annotating file /home/dan/.qna/temp/tmpcDp5e8 [1.351 seconds]
+} [1.357 seconds]
+Processing file /home/dan/.qna/temp/tmpTafMfB ... writing to /tmp/tmpZ9ZMcd/tmpTafMfB.xml {
+  Annotating file /home/dan/.qna/temp/tmpTafMfB [5.962 seconds]
+} [5.976 seconds]
+Processing file /home/dan/.qna/temp/tmpWKvrAH ... writing to /tmp/tmpZ9ZMcd/tmpWKvrAH.xml {
+  Annotating file /home/dan/.qna/temp/tmpWKvrAH [3.92 seconds]
+} [3.98 seconds]
+Processing file /home/dan/.qna/temp/tmpccLU88 ... writing to /tmp/tmpZ9ZMcd/tmpccLU88.xml {
+  Annotating file /home/dan/.qna/temp/tmpccLU88 [1.543 seconds]
+} [1.550 seconds]
+Processing file /home/dan/.qna/temp/tmpk7S94q ... writing to /tmp/tmpZ9ZMcd/tmpk7S94q.xml {
+  Annotating file /home/dan/.qna/temp/tmpk7S94q [1.894 seconds]
+} [1.902 seconds]
+Processing file /home/dan/.qna/temp/tmpfsHkEP ... writing to /tmp/tmpZ9ZMcd/tmpfsHkEP.xml {
+  Annotating file /home/dan/.qna/temp/tmpfsHkEP [2.659 seconds]
+} [2.666 seconds]
+Processing file /home/dan/.qna/temp/tmpwpYLFQ ... writing to /tmp/tmpZ9ZMcd/tmpwpYLFQ.xml {
+  Annotating file /home/dan/.qna/temp/tmpwpYLFQ [4.119 seconds]
+} [4.142 seconds]
+Processing file /home/dan/.qna/temp/tmpIyBw9D ... writing to /tmp/tmpZ9ZMcd/tmpIyBw9D.xml {
+  Annotating file /home/dan/.qna/temp/tmpIyBw9D [4.126 seconds]
+} [4.139 seconds]
+Processing file /home/dan/.qna/temp/tmpCyaU8D ... writing to /tmp/tmpZ9ZMcd/tmpCyaU8D.xml {
+  Annotating file /home/dan/.qna/temp/tmpCyaU8D [0.909 seconds]
+} [0.912 seconds]
+Processing file /home/dan/.qna/temp/tmpYZOkFD ... writing to /tmp/tmpZ9ZMcd/tmpYZOkFD.xml {
+  Annotating file /home/dan/.qna/temp/tmpYZOkFD [3.854 seconds]
+} [3.868 seconds]
+Processing file /home/dan/.qna/temp/tmpitG0e0 ... writing to /tmp/tmpZ9ZMcd/tmpitG0e0.xml {
+  Annotating file /home/dan/.qna/temp/tmpitG0e0 [6.784 seconds]
+} [6.806 seconds]
+Processing file /home/dan/.qna/temp/tmpeoFQZ3 ... writing to /tmp/tmpZ9ZMcd/tmpeoFQZ3.xml {
+  Annotating file /home/dan/.qna/temp/tmpeoFQZ3 [7.624 seconds]
+} [7.651 seconds]
+Processing file /home/dan/.qna/temp/tmpYmLWIS ... writing to /tmp/tmpZ9ZMcd/tmpYmLWIS.xml {
+  Annotating file /home/dan/.qna/temp/tmpYmLWIS [1.518 seconds]
+} [1.525 seconds]
+Processing file /home/dan/.qna/temp/tmpEQbu9t ... writing to /tmp/tmpZ9ZMcd/tmpEQbu9t.xml {
+  Annotating file /home/dan/.qna/temp/tmpEQbu9t [6.725 seconds]
+} [6.743 seconds]
+Processing file /home/dan/.qna/temp/tmpJJfwR3 ... writing to /tmp/tmpZ9ZMcd/tmpJJfwR3.xml {
+  Annotating file /home/dan/.qna/temp/tmpJJfwR3 [3.125 seconds]
+} [3.150 seconds]
+Processing file /home/dan/.qna/temp/tmpeHJYIT ... writing to /tmp/tmpZ9ZMcd/tmpeHJYIT.xml {
+  Annotating file /home/dan/.qna/temp/tmpeHJYIT [1.322 seconds]
+} [1.326 seconds]
+Processing file /home/dan/.qna/temp/tmpJjlqF7 ... writing to /tmp/tmpZ9ZMcd/tmpJjlqF7.xml {
+  Annotating file /home/dan/.qna/temp/tmpJjlqF7 [2.127 seconds]
+} [2.135 seconds]
+Processing file /home/dan/.qna/temp/tmptfR1MX ... writing to /tmp/tmpZ9ZMcd/tmptfR1MX.xml {
+  Annotating file /home/dan/.qna/temp/tmptfR1MX [2.776 seconds]
+} [2.792 seconds]
+Processing file /home/dan/.qna/temp/tmp0VyvwR ... writing to /tmp/tmpZ9ZMcd/tmp0VyvwR.xml {
+  Annotating file /home/dan/.qna/temp/tmp0VyvwR [1.846 seconds]
+} [1.858 seconds]
+Processing file /home/dan/.qna/temp/tmpqzOJtT ... writing to /tmp/tmpZ9ZMcd/tmpqzOJtT.xml {
+  Annotating file /home/dan/.qna/temp/tmpqzOJtT [10.551 seconds]
+} [10.572 seconds]
+Processing file /home/dan/.qna/temp/tmpCTiCTw ... writing to /tmp/tmpZ9ZMcd/tmpCTiCTw.xml {
+  Annotating file /home/dan/.qna/temp/tmpCTiCTw [0.566 seconds]
+} [0.568 seconds]
+Processing file /home/dan/.qna/temp/tmpePZqWs ... writing to /tmp/tmpZ9ZMcd/tmpePZqWs.xml {
+  Annotating file /home/dan/.qna/temp/tmpePZqWs [1.140 seconds]
+} [1.144 seconds]
+Processing file /home/dan/.qna/temp/tmpCNsnCh ... writing to /tmp/tmpZ9ZMcd/tmpCNsnCh.xml {
+  Annotating file /home/dan/.qna/temp/tmpCNsnCh [0.932 seconds]
+} [0.936 seconds]
+Processing file /home/dan/.qna/temp/tmpSUcR90 ... writing to /tmp/tmpZ9ZMcd/tmpSUcR90.xml {
+  Annotating file /home/dan/.qna/temp/tmpSUcR90 [5.317 seconds]
+} [5.331 seconds]
+Processing file /home/dan/.qna/temp/tmpU0Lb2A ... writing to /tmp/tmpZ9ZMcd/tmpU0Lb2A.xml {
+  Annotating file /home/dan/.qna/temp/tmpU0Lb2A [3.663 seconds]
+} [3.675 seconds]
+Processing file /home/dan/.qna/temp/tmpCbDtVs ... writing to /tmp/tmpZ9ZMcd/tmpCbDtVs.xml {
+  Annotating file /home/dan/.qna/temp/tmpCbDtVs [2.327 seconds]
+} [2.333 seconds]
+Processing file /home/dan/.qna/temp/tmpy47zAj ... writing to /tmp/tmpZ9ZMcd/tmpy47zAj.xml {
+  Annotating file /home/dan/.qna/temp/tmpy47zAj [1.293 seconds]
+} [1.298 seconds]
+Processing file /home/dan/.qna/temp/tmpwYBWom ... writing to /tmp/tmpZ9ZMcd/tmpwYBWom.xml {
+  Annotating file /home/dan/.qna/temp/tmpwYBWom [4.352 seconds]
+} [4.365 seconds]
+Processing file /home/dan/.qna/temp/tmpGciLgo ... writing to /tmp/tmpZ9ZMcd/tmpGciLgo.xml {
+  Annotating file /home/dan/.qna/temp/tmpGciLgo [5.131 seconds]
+} [5.145 seconds]
+Processing file /home/dan/.qna/temp/tmpZGsLrx ... writing to /tmp/tmpZ9ZMcd/tmpZGsLrx.xml {
+  Annotating file /home/dan/.qna/temp/tmpZGsLrx [1.436 seconds]
+} [1.440 seconds]
+Processing file /home/dan/.qna/temp/tmpwaeRvb ... writing to /tmp/tmpZ9ZMcd/tmpwaeRvb.xml {
+  Annotating file /home/dan/.qna/temp/tmpwaeRvb [0.795 seconds]
+} [0.798 seconds]
+Processing file /home/dan/.qna/temp/tmpiOT0MZ ... writing to /tmp/tmpZ9ZMcd/tmpiOT0MZ.xml {
+  Annotating file /home/dan/.qna/temp/tmpiOT0MZ [1.310 seconds]
+} [1.316 seconds]
+Processing file /home/dan/.qna/temp/tmp1sh5Mi ... writing to /tmp/tmpZ9ZMcd/tmp1sh5Mi.xml {
+  Annotating file /home/dan/.qna/temp/tmp1sh5Mi [5.428 seconds]
+} [5.442 seconds]
+Processing file /home/dan/.qna/temp/tmpW0Nj3N ... writing to /tmp/tmpZ9ZMcd/tmpW0Nj3N.xml {
+  Annotating file /home/dan/.qna/temp/tmpW0Nj3N [2.78 seconds]
+} [2.85 seconds]
+Processing file /home/dan/.qna/temp/tmpDBotXm ... writing to /tmp/tmpZ9ZMcd/tmpDBotXm.xml {
+  Annotating file /home/dan/.qna/temp/tmpDBotXm [1.342 seconds]
+} [1.347 seconds]
+Processing file /home/dan/.qna/temp/tmpHmLvvb ... writing to /tmp/tmpZ9ZMcd/tmpHmLvvb.xml {
+  Annotating file /home/dan/.qna/temp/tmpHmLvvb [2.589 seconds]
+} [2.596 seconds]
+Processing file /home/dan/.qna/temp/tmpBkvn3Y ... writing to /tmp/tmpZ9ZMcd/tmpBkvn3Y.xml {
+  Annotating file /home/dan/.qna/temp/tmpBkvn3Y [4.841 seconds]
+} [4.856 seconds]
+Processing file /home/dan/.qna/temp/tmpXwf6TP ... writing to /tmp/tmpZ9ZMcd/tmpXwf6TP.xml {
+  Annotating file /home/dan/.qna/temp/tmpXwf6TP [4.349 seconds]
+} [4.361 seconds]
+Processing file /home/dan/.qna/temp/tmpQIdnDS ... writing to /tmp/tmpZ9ZMcd/tmpQIdnDS.xml {
+  Annotating file /home/dan/.qna/temp/tmpQIdnDS [1.311 seconds]
+} [1.317 seconds]
+Processing file /home/dan/.qna/temp/tmpSlSqi1 ... writing to /tmp/tmpZ9ZMcd/tmpSlSqi1.xml {
+  Annotating file /home/dan/.qna/temp/tmpSlSqi1 [6.510 seconds]
+} [6.528 seconds]
+Processing file /home/dan/.qna/temp/tmp4MBhGr ... writing to /tmp/tmpZ9ZMcd/tmp4MBhGr.xml {
+  Annotating file /home/dan/.qna/temp/tmp4MBhGr [1.246 seconds]
+} [1.250 seconds]
+Processing file /home/dan/.qna/temp/tmpmrqiTe ... writing to /tmp/tmpZ9ZMcd/tmpmrqiTe.xml {
+  Annotating file /home/dan/.qna/temp/tmpmrqiTe [6.148 seconds]
+} [6.161 seconds]
+Processing file /home/dan/.qna/temp/tmp6zFtmn ... writing to /tmp/tmpZ9ZMcd/tmp6zFtmn.xml {
+  Annotating file /home/dan/.qna/temp/tmp6zFtmn [2.307 seconds]
+} [2.315 seconds]
+Processing file /home/dan/.qna/temp/tmpDB64ib ... writing to /tmp/tmpZ9ZMcd/tmpDB64ib.xml {
+  Annotating file /home/dan/.qna/temp/tmpDB64ib [3.415 seconds]
+} [3.424 seconds]
+Processing file /home/dan/.qna/temp/tmpfvJZJq ... writing to /tmp/tmpZ9ZMcd/tmpfvJZJq.xml {
+  Annotating file /home/dan/.qna/temp/tmpfvJZJq 

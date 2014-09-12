@@ -178,7 +178,6 @@ def get_counts(conn):
 def resolve_corefs():
     print "Resolving corefs..."
     # Get entities from db
-    print 'one'
     conn = sqlite3.connect(config.DB)
     entities = get_entities(conn)
 
@@ -187,12 +186,12 @@ def resolve_corefs():
     for parse in parses:
         set_corefs(parse, conn)
 
+
     # Resolve corefs using Levenshtein edit distance
     matches = fuzzy_strmatch(get_entities(conn))
     if len(matches) > 0:
         set_strmatches(matches, conn)
 
-    conn.commit()
     conn.close()
 
 
@@ -213,7 +212,7 @@ def parse_corefs(entities):
     # Put all entities in a txt file.
     entity_str = '. '.join(entities)
 
-    temp = NamedTemporaryFile(dir=config.TEMP, delete=False) 
+    temp = NamedTemporaryFile(dir=config.TEMP, delete=False)
     temp.write(entity_str)
 
     # And send it StanfordCoreNLP to resolve corefs.
@@ -248,6 +247,7 @@ def set_corefs(parse_dict, conn):
                 # do the same for obj column
                # params['column'] = 'obj'
                 conn.execute(query.format(column='obj'), params)
+        conn.commit()
     except KeyError as e:
         print "Coref resolution failed."
 
@@ -289,6 +289,7 @@ def set_strmatches(matches, conn):
 
             # Do the same for obj column.
             conn.execute(query.format(column='obj'), params)
+    conn.commit()
 
 
 
